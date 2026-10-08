@@ -46,9 +46,11 @@ All 4 ESP32/WLED devices are configured identically (60× WS2812B on GPIO16, RGB
 
 ## Repo contents
 
-- `max/midi_to_wled.maxpat` — the Max/MSP patch
-- `wled/w1/cfg.json` — WLED config backup (WiFi SSID redacted). W2–W4 are identical except IP and sync port (see table above). No custom presets are used — all control is live via UDP from Max.
+- `max/midi_to_wled.maxpat` — the Max/MSP patch (includes the `sadam.udpSender` dependency)
+- `ableton/wled-ableton.als` — the Ableton Live project with the velocity automation
+- `wled/w1/cfg.json` — WLED config backup from the physical device (WiFi SSID redacted). No custom presets are used — all control is live via UDP from Max.
+- `wled/w2/`, `wled/w3/`, `wled/w4/cfg.json` — derived from W1's backup, changing only `mdns`, `ip` and `port1` to match each device's row in the table above (not independently downloaded from each device).
 
 ## Status
 
-Reconstructed from the original Max patch and a live config backup. Ableton project file not yet recovered.
+Complete: Max patch, Ableton project, and WLED config backup for all 4 devices.
